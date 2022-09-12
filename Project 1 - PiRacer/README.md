@@ -23,7 +23,7 @@
     [Step 10: Install OpenCV](#step-10-install-opencv)
     
 ---
-<br/><br/>
+<br/>
 
 ## Step 1: Flash Operating System
 Advanced options
@@ -38,7 +38,7 @@ Advanced options
 5. Change advanced options to connect WIFI
 6. Click Write to Download OS
 
-<br/><br/>
+<br/>
 
 ## Step 2: Setup for the first boot
 
@@ -65,7 +65,7 @@ Advanced options
     
 3. Eject your SD card and put it in the Pi and power on
 
-<br/><br/>
+<br/>
 
 ## Step 3: Connecting to the Pi
 
@@ -87,7 +87,7 @@ Find car IP
     - Password: `seame2022`
     - Hostname: `your pi IP address`
 
-<br/><br/>
+<br/>
 
 ## Step 4: Update and Upgrade
 
@@ -95,7 +95,7 @@ Find car IP
 sudo apt-get update --allow-releaseinfo-change
 sudo apt-get upgrade
 ```
-<br/><br/>
+<br/>
 
 ## Step 5: Raspi-config
 
@@ -110,7 +110,7 @@ sudo raspi-config
 - select `Advanced Options` - `Expand Filesystem` so you can use your whole sd-card storage
 - Choose `<Finish>` and Reboot
 
-<br/><br/>
+<br/>
 
 ## Step 6: Install Dependencies
 
@@ -119,7 +119,7 @@ ping bugatti.local
 ssh bugatti@192.168.0.102
 sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev libgeos-dev git ntp
 ```
-<br/><br/>
+<br/>
 
 ## Step 7: Install OpenCV Dependencies
 
@@ -127,7 +127,7 @@ sudo apt-get install build-essential python3 python3-dev python3-pip python3-vir
 sudo apt-get install libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test
 ```
 
-<br/><br/>
+<br/>
 
 ## Step 8: Setup Virtual Env
 
@@ -136,7 +136,7 @@ python3 -m virtualenv -p python3 env --system-site-packages
 echo "source ~/env/bin/activate" >> ~/.bashrc
 source ~/.bashrc
 ```
-<br/><br/>
+<br/>
 
 ## Step 9: Install Donkeycar Python Code
 
@@ -165,7 +165,7 @@ source ~/.bashrc
     python -c "import tensorflow; print(tensorflow.__version__)"
     ```
     
-<br/><br/>
+<br/>
 
 ## Step 10: Install OpenCV
 
@@ -184,7 +184,7 @@ source ~/.bashrc
     # if no errors, you have OpenCV installed
     ```
 
-<br/><br/>
+<br/>
 
 # PiRacer Setup
 
@@ -203,7 +203,7 @@ source ~/.bashrc
 
 ---
 
-<br/><br/>
+<br/>
 
 ## Create Donkeycar from Template
 
@@ -225,7 +225,7 @@ source ~/.bashrc
     If Pi doesn’t display like below, exchange your **PiRacer expansion board**
     
     ```bash
-    		 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+    	 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
     00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
     10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -235,7 +235,7 @@ source ~/.bashrc
     60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
     70: 70 -- -- -- -- -- -- --
     ```
-<br/><br/>    
+<br/>  
 
 ## Web Control
 
@@ -255,7 +255,7 @@ source ~/.bashrc
     
     </aside>
     
-<br/><br/>
+<br/>
 
 ## Calibrate DonkeyCar
 
@@ -281,7 +281,7 @@ source ~/.bashrc
     # THROTTLE_REVERSE_PWM = 220
     ```
     
-<br/><br/>
+<br/>
 
 ## Teleoperation ( Shanwan gamepad )
 
