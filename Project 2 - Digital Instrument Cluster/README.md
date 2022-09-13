@@ -20,15 +20,17 @@
     arduino
     ```
     
-    - error
-        
+    <details>
+    <summary>error</summary>
     
-        
-        ```jsx
-        sudo usermod -a -G dialout seame-three
-        sudo reboot
-        ```
-        
+    ![Untitled](https://user-images.githubusercontent.com/111988634/189864114-eeb157e5-42cf-46af-9b59-f848882e8b40.png)
+
+    ```bash
+    sudo usermod -a -G dialout seame-three
+    sudo reboot
+    ```
+    </details>
+    <br/>
 2. Connect Arduino Uno and MH-Sensor-Series
     
     ```arduino

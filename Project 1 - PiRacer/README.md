@@ -28,6 +28,9 @@
 ## Step 1: Flash Operating System
 Advanced options
 
+![Untitled](https://user-images.githubusercontent.com/111988634/189864911-a9a0dc23-2457-4d28-a555-85941f48fcb4.png)
+![Untitled (1)](https://user-images.githubusercontent.com/111988634/189864923-650e5f07-4be6-4020-8fbb-0c8de57a7bcb.png)
+
 1. Download [Raspian Legacy](https://downloads.raspberrypi.org/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2021-12-02/2021-12-02-raspios-buster-armhf-lite.zip) ( Buster ) 
 
 > Raspbian Latest ( bullseye ) is not compatible with PiRacer Pro wiki
@@ -72,6 +75,7 @@ Advanced options
 Find car IP
 
 1. Find my car’s IP
+    ![Untitled (2)](https://user-images.githubusercontent.com/111988634/189864977-2a45180d-bc06-468b-bed4-a2a6049c607c.png)
     
     ```bash
     pint <your hostname>.local
@@ -98,7 +102,7 @@ sudo apt-get upgrade
 <br/>
 
 ## Step 5: Raspi-config
-
+![Untitled (3)](https://user-images.githubusercontent.com/111988634/189865327-d4f30587-637b-4862-ad78-e1b1353759af.png)
 ```bash
 sudo raspi-config
 ```
@@ -239,7 +243,7 @@ source ~/.bashrc
 
 ## Web Control
 
-
+![Untitled (4)](https://user-images.githubusercontent.com/111988634/189865372-29e46eb9-9c7a-4abf-a8f5-9ac2da8a535f.png)
 1. Open Raspberry Pi terminal and run the follow commands
     
     ```bash
@@ -289,6 +293,8 @@ source ~/.bashrc
 💡 Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
 
 </aside>
+
+![Untitled (5)](https://user-images.githubusercontent.com/111988634/189865479-05225856-e480-4b85-89c0-9c7b93fc58e7.png)
 
 1. Connect game pad with PiRacer
 2. Create joystick creator wizard
