@@ -9,4 +9,4 @@
 
 ## Project 2 - Digital Instrument Cluster
 
-- Arduino Setup
+- [Arduino Setup](https://github.com/SEA-ME/Team_Bugatti_PiRacer/tree/main/Project%202%20-%20Digital%20Instrument%20Cluster#arduino-setup)

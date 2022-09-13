@@ -1,5 +1,4 @@
 # Arduino Setup
-# Project 2 - Digital Instrument Cluster
 
 - Arduino Nano ( humidity, temperature )
 - transmit humidity, temperature to CAN
