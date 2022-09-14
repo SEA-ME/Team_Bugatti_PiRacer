@@ -220,3 +220,55 @@ void loop() {
       delay(1000);
     }
     ```
+
+## Uno, RPi CAN BUS communication
+```bash
+sudo nano /boot/config.txt
+```
+
+```bash
+dtparam=spi=on
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25,spimaxfrequency=1000000
+dtoverlay=spi-bcm2835-overlay
+```
+
+```bash
+sudo apt-get install can-utils
+sudo reboot
+```
+
+```bash
+(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0
+driver  driver_override  modalias  net  of_node  power  statistics  subsystem  uevent
+```
+
+```bash
+(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net
+can0
+```
+
+```bash
+(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net/can0/
+addr_assign_type  broadcast        carrier_down_count  dev_port  duplex             ifalias  link_mode         napi_defer_hard_irqs  phys_port_id    power       speed       testing       uevent
+addr_len          carrier          carrier_up_count    device    flags              ifindex  mtu               netdev_group          phys_port_name  proto_down  statistics  tx_queue_len
+address           carrier_changes  dev_id              dormant   gro_flush_timeout  iflink   name_assign_type  operstate             phys_switch_id  queues      subsystem   type
+```
+
+```bash
+sudo ip link set can0 up type can bitrate 1000000
+sudo /sbin/ip link set can0 up type can bitrate 1000000
+```
+
+```bash
+(env) bugatti@bugatti:~ $ sudo ifconfig
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+```bash
+pip3 install python-can
+```
