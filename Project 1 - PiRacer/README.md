@@ -109,10 +109,10 @@ sudo raspi-config
 
 - change default password for pi
 - change hostname
-- enable `Interfacing Options` - `I2C`
-- enable `Interfacing Options` - `Camera`
-- select `Advanced Options` - `Expand Filesystem` so you can use your whole sd-card storage
-- Choose `<Finish>` and Reboot
+- enableÂ `Interfacing Options`Â -Â `I2C`
+- enableÂ `Interfacing Options`Â -Â `Camera`
+- selectÂ `Advanced Options`Â -Â `Expand Filesystem`Â so you can use your whole sd-card storage
+- ChooseÂ `<Finish>` and Reboot
 
 <br/>
 
@@ -200,7 +200,7 @@ source ~/.bashrc
     
     [Calibrate DonkeyCar](#calibrate-donkeycar)
     
-    [Teleoperation ( Shanwan gamepad )](#teleoperation--shanwan-gamepad)
+    [Teleoperation ( Shanwan gamepad )](https://github.com/SEA-ME/Team_Bugatti_PiRacer/tree/main/Project%201%20-%20PiRacer#teleoperation--shanwan-gamepad-)
     
 
 
@@ -255,7 +255,7 @@ source ~/.bashrc
 2. Go to `http://<raspberrypi_ip_address>:8887`
     
     <aside>
-    ?��? If you connected with physical game controller, it overrides web control.
+    ?Ÿ’? If you connected with physical game controller, it overrides web control.
     
     </aside>
     
@@ -290,7 +290,7 @@ source ~/.bashrc
 ## Teleoperation ( Shanwan gamepad )
 
 <aside>
-?��? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
+?Ÿ’? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
 
 </aside>
 
