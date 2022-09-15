@@ -200,7 +200,7 @@ source ~/.bashrc
     
     [Calibrate DonkeyCar](#calibrate-donkeycar)
     
-    [Teleoperation ( GamePad )](#teleoperation--shanwan-gamepad)
+    [Teleoperation ( Shanwan gamepad )](#teleoperation--shanwan-gamepad)
     
 
 
