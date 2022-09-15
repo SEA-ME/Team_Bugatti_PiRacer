@@ -16,7 +16,7 @@
 
     [Arduino Uno, MH-Sensor-Series](#arduino-uno-mh-sensor-series)
 
-    [Arduino Uno, Nano, DHT11 Sensor ( Temperature and Humidity )](#arduino-uno-nano-dht11-sensor--temperature-and-humidity)
+    [Arduino Uno, Nano, DHT11 Sensor ( Temperature and Humidity )](https://github.com/SEA-ME/Team_Bugatti_PiRacer/tree/main/Project%202%20-%20Digital%20Instrument%20Cluster#arduino-uno-nano-dht11-sensor--temperature-and-humidity-)
 
     [Arduino Uno, Raspberry PI, CAN module ( MCP 2515 )](#arduino-uno-raspberry-pi-can-module--mcp-2515)
 
