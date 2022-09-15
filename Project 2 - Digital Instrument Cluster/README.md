@@ -14,9 +14,11 @@
 
     [Arduino setting](#arduino-setting)
 
-    [Arduino Uno and MH-Sensor-Series](#arduino-uno-and-mh-sensor-series)
+    [Arduino Uno, MH-Sensor-Series](#arduino-uno-mh-sensor-series)
 
     [Arduino Uno, Nano, DHT11 Sensor ( Temperature and Humidity )](#arduino-uno-nano-dht11-sensor--temperature-and-humidity)
+
+    [Arduino Uno, Raspberry PI, CAN module ( MCP 2515 )](#arduino-uno-raspberry-pi-can-module--mcp-2515)
 
 <br/>
 
@@ -65,7 +67,7 @@
     ```
 <br/>
 
-## Arduino Uno and MH-Sensor-Series
+## Arduino Uno, MH-Sensor-Series
 
 ![nse-8050088173945518711-6769](https://user-images.githubusercontent.com/111988634/190005206-37e48b0b-eba8-4a11-9f84-69b67825110b.jpg)
 
@@ -221,54 +223,91 @@ void loop() {
     }
     ```
 
-## Uno, RPi CAN BUS communication
-```bash
-sudo nano /boot/config.txt
-```
+<br/>
 
-```bash
-dtparam=spi=on
-dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25,spimaxfrequency=1000000
-dtoverlay=spi-bcm2835-overlay
-```
+## Arduino Uno, Raspberry PI, CAN module ( MCP 2515 )
 
-```bash
-sudo apt-get install can-utils
-sudo reboot
-```
+<img width="737" alt="image" src="https://user-images.githubusercontent.com/111988634/190488739-d6cc93b2-57a1-4e00-8630-2188dca2b012.png">
 
-```bash
-(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0
-driver  driver_override  modalias  net  of_node  power  statistics  subsystem  uevent
-```
 
-```bash
-(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net
-can0
-```
+| PiRacer Pro expansion board | Raspberry PI |
+| --- | --- |
+| SCL | GPIO3 |
+| SDA | GPIO2 |
+| 3V3 | 3V3 |
+| GND | GND |
+| 5V | 5V |
+| 5V | None |
 
-```bash
-(env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net/can0/
-addr_assign_type  broadcast        carrier_down_count  dev_port  duplex             ifalias  link_mode         napi_defer_hard_irqs  phys_port_id    power       speed       testing       uevent
-addr_len          carrier          carrier_up_count    device    flags              ifindex  mtu               netdev_group          phys_port_name  proto_down  statistics  tx_queue_len
-address           carrier_changes  dev_id              dormant   gro_flush_timeout  iflink   name_assign_type  operstate             phys_switch_id  queues      subsystem   type
-```
+| CAN Module MCP2515 | CAN Module MCP2515 |
+| --- | --- |
+| CAN H | CAN H |
+| CAN L | CAN L |
 
-```bash
-sudo ip link set can0 up type can bitrate 1000000
-sudo /sbin/ip link set can0 up type can bitrate 1000000
-```
+| Arduino Nano | CAN Module MCP2515 |
+| --- | --- |
+| VCC | 5V |
+| GND | GND |
+| CS | 9 |
+| SO | 11 |
+| SI | 10 |
+| SCK | 13 |
 
-```bash
-(env) bugatti@bugatti:~ $ sudo ifconfig
-can0: flags=193<UP,RUNNING,NOARP>  mtu 16
-        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-```
-
-```bash
-pip3 install python-can
-```
+1. Open config file and add these lines
+    
+    ```bash
+    sudo nano /boot/config.txt
+    ```
+    
+    ```bash
+    dtparam=spi=on
+    dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25
+    ```
+    
+2. Download can utils and reboot
+    
+    ```bash
+    sudo apt-get install can-utils
+    sudo reboot
+    ```
+    
+3. You can check by these commands
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0
+    driver  driver_override  modalias  net  of_node  power  statistics  subsystem  uevent
+    ```
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net
+    can0
+    ```
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ ls /sys/bus/spi/devices/spi0.0/net/can0/
+    addr_assign_type  broadcast        carrier_down_count  dev_port  duplex             ifalias  link_mode         napi_defer_hard_irqs  phys_port_id    power       speed       testing       uevent
+    addr_len          carrier          carrier_up_count    device    flags              ifindex  mtu               netdev_group          phys_port_name  proto_down  statistics  tx_queue_len
+    address           carrier_changes  dev_id              dormant   gro_flush_timeout  iflink   name_assign_type  operstate             phys_switch_id  queues      subsystem   type
+    ```
+    
+4. Set up the CAN Interface
+    
+    ```bash
+    sudo ip link set can0 up type can bitrate 125000
+    ```
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ sudo ifconfig
+    can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+            unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ```
+    
+5. Install Raspberry PI Python CAN
+    
+    ```bash
+    pip3 install python-can
+    ```

@@ -74,7 +74,7 @@ Advanced options
 
 Find car IP
 
-1. Find my carâ€™s IP
+1. Find my car's IP
     ![Untitled (2)](https://user-images.githubusercontent.com/111988634/189864977-2a45180d-bc06-468b-bed4-a2a6049c607c.png)
     
     ```bash
@@ -226,7 +226,7 @@ source ~/.bashrc
     sudo i2cdetect -y 1
     ```
 
-    If Pi doesnâ€™t display like below, exchange your **PiRacer expansion board**
+    If Pi doesn't display like below, exchange your **PiRacer expansion board**
     
     ```bash
          0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -255,7 +255,7 @@ source ~/.bashrc
 2. Go to `http://<raspberrypi_ip_address>:8887`
     
     <aside>
-    ðŸ’¡ If you connected with physical game controller, it overrides web control.
+    ?Ÿ’? If you connected with physical game controller, it overrides web control.
     
     </aside>
     
@@ -290,7 +290,7 @@ source ~/.bashrc
 ## Teleoperation ( Shanwan gamepad )
 
 <aside>
-ðŸ’¡ Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
+?Ÿ’? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
 
 </aside>
 
