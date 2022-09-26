@@ -1,0 +1,8 @@
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/test.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/install.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/install/local.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/install/strip.dir
+/home/seame-three/Team_Bugatti_PiRacer/Project 2 - Digital Instrument Cluster/PRND/build-test-Desktop-Debug/CMakeFiles/test_autogen.dir
