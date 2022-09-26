@@ -1,14 +1,10 @@
 # PiRacer Setup
 
-- Contents
-    
-    [Create Donkeycar from Template](#create-donkeycar-from-template)
-    
-    [Web Control](#web-control)
-    
-    [Calibrate DonkeyCar](#calibrate-donkeycar)
-    
-    [Teleoperation ( Shanwan gamepad )](https://github.com/SEA-ME/Team_Bugatti_PiRacer/tree/main/Project%201%20-%20PiRacer#teleoperation--shanwan-gamepad-)
+- Contents  
+    [Create Donkeycar from Template](#create-donkeycar-from-template)  
+    [Web Control](#web-control)  
+    [Calibrate DonkeyCar](#calibrate-donkeycar)  
+    [Teleoperation ( Shanwan gamepad )](#teleoperation--shanwan-gamepad)
     
 
 
@@ -63,7 +59,7 @@
 2. Go to `http://<raspberrypi_ip_address>:8887`
     
     <aside>
-    ?Ÿ’? If you connected with physical game controller, it overrides web control.
+    ?Ÿ???? If you connected with physical game controller, it overrides web control.
     
     </aside>
     
@@ -98,7 +94,7 @@
 ## Teleoperation ( Shanwan gamepad )
 
 <aside>
-?Ÿ’? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
+?Ÿ???? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
 
 </aside>
 

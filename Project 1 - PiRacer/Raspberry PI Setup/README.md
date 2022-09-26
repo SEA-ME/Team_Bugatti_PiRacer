@@ -1,25 +1,15 @@
 # Raspberry PI Setup
 
-- Contents
-    
-    [Step 1: Flash Operating System](#step-1-flash-operating-system)
-    
-    [Step 2: Setup for the first boot](#step-2-setup-for-the-first-boot)
-    
-    [Step 3: Connecting to the Pi](#step-3-connecting-to-the-pi)
-    
-    [Step 4: Update and Upgrade](#step-4-update-and-upgrade)
-    
-    [Step 5: Raspi-config](#step-5-raspi-config)
-    
-    [Step 6: Install Dependencies](#step-6-install-dependencies)
-    
-    [Step 7: Install OpenCV Dependencies](#step-7-install-opencv-dependencies)
-    
-    [Step 8: Setup Virtual Env](#step-8-setup-virtual-env)
-    
-    [Step 9: Install Donkeycar Python Code](#step-9-install-donkeycar-python-code)
-    
+- Contents  
+    [Step 1: Flash Operating System](#step-1-flash-operating-system)  
+    [Step 2: Setup for the first boot](#step-2-setup-for-the-first-boot)  
+    [Step 3: Connecting to the Pi](#step-3-connecting-to-the-pi)  
+    [Step 4: Update and Upgrade](#step-4-update-and-upgrade)  
+    [Step 5: Raspi-config](#step-5-raspi-config)  
+    [Step 6: Install Dependencies](#step-6-install-dependencies)  
+    [Step 7: Install OpenCV Dependencies](#step-7-install-opencv-dependencies)  
+    [Step 8: Setup Virtual Env](#step-8-setup-virtual-env)  
+    [Step 9: Install Donkeycar Python Code](#step-9-install-donkeycar-python-code)  
     [Step 10: Install OpenCV](#step-10-install-opencv)
     
 ---
@@ -109,10 +99,10 @@ sudo raspi-config
 
 - change default password for pi
 - change hostname
-- enableÂ `Interfacing Options`Â -Â `I2C`
-- enableÂ `Interfacing Options`Â -Â `Camera`
-- selectÂ `Advanced Options`Â -Â `Expand Filesystem`Â so you can use your whole sd-card storage
-- ChooseÂ `<Finish>` and Reboot
+- enable `Interfacing Options`<->`I2C`
+- enable `Interfacing Options`<->`Camera`
+- select `Advanced Options`<->`Expand Filesystem` so you can use your whole sd-card storage
+- Choose `<Finish>` and Reboot
 
 <br/>
 

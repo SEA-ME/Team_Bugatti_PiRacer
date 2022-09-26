@@ -1,15 +1,12 @@
 # CAN Communication
 <br/>
 
-- Contents
-
-    [Arduino setting](#arduino-setting)
-
-    [Arduino Uno, MH-Sensor-Series](#arduino-uno-mh-sensor-series)
-
-    [Arduino Uno, Nano, DHT11 Sensor ( Temperature and Humidity )](#arduino-uno-nano-dht11-sensor--temperature-and-humidity)
-
-    [Arduino Uno, Raspberry PI, CAN module ( MCP 2515 )](#arduino-uno-raspberry-pi-can-module--mcp-2515)
+- Contents  
+    [Arduino setting](#arduino-setting)  
+    [Arduino Uno, MH-Sensor-Series](#arduino-uno-mh-sensor-series)  
+    [Arduino Uno, Nano, DHT11 Sensor ( Temperature and Humidity )](#arduino-uno-nano-dht11-sensor--temperature-and-humidity)  
+    [Arduino Uno, Raspberry PI, CAN module ( MCP 2515 )](#arduino-uno-raspberry-pi-can-module--mcp-2515)  
+    [Arduino Uno, Raspberry PI, CAN Shields](#arduino-uno-raspberry-pi-can-shields)
 
 <br/>
 
@@ -301,4 +298,227 @@ void loop() {
     
     ```bash
     pip3 install python-can
+    ```
+
+<br/>
+
+## Arduino Uno, Raspberry PI, CAN Shields
+![nse-3031638833028511961-6963](https://user-images.githubusercontent.com/111988634/192337689-a812475f-3fe9-4a5a-9b55-a79576cfffff.jpg)
+| PiRacer Pro expansion board | Raspberry PI  CAN shield |
+| --- | --- |
+| SCL | SCL ( Don't connect with GND ) |
+| SDA | SDA ( Don't connect with GND ) |
+| 3V3 | 3V3 ( Soldering )  |
+| GND | GND |
+| 5V | 5V |
+| 5V | 5V |
+
+
+1. **Soldering 3V3 to Raspberry PI CAN Shield**
+
+1. Open config.txt file
+    
+    ```bash
+    sudo nano /boot/config.txt
+    ```
+    
+2. Add the following line at the end of the file
+    
+    ```bash
+    dtoverlay=seeed-can-fd-hat-v2
+    ```
+    
+3. Reboot RPI
+    
+    ```bash
+    sudo reboot
+    ```
+    
+4. Check the kernel log to see if CAN-BUS HAT was initialized successfully. You will also see can0
+and can1 appear in the list of ifconfig results
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ dmesg | grep spi
+    [    5.682114] spi_master spi0: will run message pump with realtime priority
+    [    5.690279] mcp251xfd spi0.1 can0: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
+    [    5.702068] mcp251xfd spi0.0 can1: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
+    ```
+    
+    ```bash
+    (env) bugatti@bugatti:~ $ ifconfig -a
+    can0: flags=128<NOARP>  mtu 16
+            unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+            device interrupt 67  
+    
+    can1: flags=128<NOARP>  mtu 16
+            unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+            device interrupt 68  
+    
+    eth0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+            ether e4:5f:01:64:c0:ca  txqueuelen 1000  (Ethernet)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    
+    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+            inet 127.0.0.1  netmask 255.0.0.0
+            inet6 ::1  prefixlen 128  scopeid 0x10<host>
+            loop  txqueuelen 1000  (Local Loopback)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    
+    wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+            inet 192.168.0.102  netmask 255.255.255.0  broadcast 192.168.0.255
+            inet6 fe80::63b1:930e:fdf6:6fa7  prefixlen 64  scopeid 0x20<link>
+            ether e4:5f:01:64:c0:cb  txqueuelen 1000  (Ethernet)
+            RX packets 608  bytes 49980 (48.8 KiB)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 476  bytes 70356 (68.7 KiB)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ```
+    
+5. Raspberry pi setting and and you can use can-util to receive
+    
+    ```bash
+    sudo ip link set can1 up type can bitrate 500000
+    ```
+    
+    ```python
+    # add bashrc
+    alias cl='sudo ip link set can1 up type can bitrate 500000'
+    ```
+    
+    ```bash
+    # receive
+    (env) bugatti@bugatti:~ $ candump can1
+      can1  000   [8]  00 00 00 00 00 00 09 1C
+      can1  000   [8]  00 00 00 00 00 00 09 1D
+      can1  000   [8]  00 00 00 00 00 00 09 1E
+      can1  000   [8]  00 00 00 00 00 00 09 1F
+      can1  000   [8]  00 00 00 00 00 00 09 20
+      can1  000   [8]  00 00 00 00 00 00 09 21
+      can1  000   [8]  00 00 00 00 00 00 09 22
+      can1  000   [8]  00 00 00 00 00 00 09 23
+      can1  000   [8]  00 00 00 00 00 00 09 24
+    ```
+    
+6. You can use python code to get the CAN data
+    
+    ```bash
+    # install python-can
+    sudo pip3 install python-can
+    ```
+    
+    ```bash
+    cd ~/mycar
+    sudo nano can_recv.py
+    ```
+    
+7. Paste this code and execute
+    - Arduino
+        
+        ```arduino
+        // demo: CAN-BUS Shield, send data
+        // loovee@seeed.cc
+         
+        #include <mcp_can.h>
+        #include <SPI.h>
+        #include <DHT.h> //Library for using DHT sensor
+        #define DHTPIN A0
+        #define DHTTYPE DHT11
+        
+        const int HOLE = 2; // digital input
+        unsigned long millisBefore;
+        volatile int cnt; // count holes
+        float rpm = 0;
+        
+        // the cs pin of the version after v1.1 is default to D9
+        // v0.9b and v1.0 is default D10
+        const int SPI_CS_PIN = 10;
+         
+        MCP_CAN CAN(SPI_CS_PIN);  // Set CS pin
+        DHT dht(DHTPIN, DHTTYPE); //initialize object dht for class DHT with DHT pin with STM32 and DHT type as DHT11 
+        
+        void setup()
+        {
+            Serial.begin(115200);
+            SPI.begin(); //Begins SPI communication
+            dht.begin(); //Begins to read temperature & humidity sensor value
+         
+            pinMode (HOLE, INPUT);
+            attachInterrupt(digitalPinToInterrupt(HOLE), count, FALLING);
+            while (CAN_OK != CAN.begin(CAN_500KBPS))              // init can bus : baudrate = 500k
+            {
+                Serial.println("CAN BUS Shield init fail");
+                Serial.println(" Init CAN BUS Shield again");
+                delay(100);
+            }
+            Serial.println("CAN BUS Shield init ok!");
+        }
+         
+        unsigned char stmp[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+        
+        void loop()
+        {
+            int h = dht.readHumidity(); //Gets Humidity value
+            int t = dht.readTemperature(); //Gets Temperature value
+        
+            // Caculate RPM
+            if (millis() - millisBefore > 1000){
+              rpm = (cnt/12.0) * 60;
+              cnt = 0;
+              millisBefore = millis();
+            }
+           
+            stmp[0] = h;  // Humidity
+            stmp[1] = t;  // Temperature
+            stmp[2] = rpm; // RPM
+        
+            CAN.sendMsgBuf(0x00, 0, 8, stmp);
+            delay(100);                       // send data per 100ms
+        }
+        
+        void count()
+        {
+            cnt++;
+        }
+        // END FILE
+        ```
+        
+    - python (RPI)
+        
+        ```python
+        import can
+         
+        can_interface = 'can1'
+        bus = can.interface.Bus(can_interface, bustype='socketcan')
+        while True:
+            message = bus.recv(1.0) # Timeout in seconds.
+            if message is None:
+                    print('Timeout occurred, no message.')
+            print(message)
+        ```
+        
+    
+    ```bash
+    (env) bugatti@bugatti:~/mycar $ python3 can_recv.py
+    Timestamp: 1663683669.282204        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 47     Channel: can1
+    Timestamp: 1663683669.382681        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 48     Channel: can1
+    Timestamp: 1663683669.482546        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 49     Channel: can1
+    Timestamp: 1663683669.582747        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 4a     Channel: can1
+    Timestamp: 1663683669.682920        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 4b     Channel: can1
+    Timestamp: 1663683669.783183        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 4c     Channel: can1
+    Timestamp: 1663683669.883471        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 4d     Channel: can1
+    Timestamp: 1663683669.983672        ID: 0000    S Rx                DL:  8    00 00 00 00 00 00 23 4e     Channel: can1
     ```
