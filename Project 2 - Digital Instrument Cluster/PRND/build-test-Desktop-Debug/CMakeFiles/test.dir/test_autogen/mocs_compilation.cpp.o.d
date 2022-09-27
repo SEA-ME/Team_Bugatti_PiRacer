@@ -280,4 +280,8 @@ CMakeFiles/test.dir/test_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+ /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/build-test-Desktop-Debug/test_autogen/EWIEGA46WW/moc_window.cpp \
+ /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/build-test-Desktop-Debug/test_autogen/EWIEGA46WW/../../../test/window.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h

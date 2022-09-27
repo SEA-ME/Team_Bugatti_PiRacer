@@ -299,8 +299,9 @@ CMakeFiles/test.dir/main.cpp.o: /home/seame-three/Team_Bugatti_PiRacer/Project\ 
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
   /usr/include/c++/11/variant \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
-  /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/window.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QProgressBar \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qprogressbar.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
@@ -335,7 +336,10 @@ CMakeFiles/test.dir/main.cpp.o: /home/seame-three/Team_Bugatti_PiRacer/Project\ 
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+  /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/window.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/test.dir/mainwindow.cpp.o: /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/mainwindow.cpp \
   /usr/include/stdc-predef.h \
@@ -1016,7 +1020,11 @@ CMakeFiles/test.dir/test_autogen/mocs_compilation.cpp.o: test_autogen/mocs_compi
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+  test_autogen/EWIEGA46WW/moc_window.cpp \
+  /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/window.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/test.dir/window.cpp.o: /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/window.cpp \
   /usr/include/stdc-predef.h \
@@ -1346,14 +1354,25 @@ CMakeFiles/test.dir/window.cpp.o: /home/seame-three/Team_Bugatti_PiRacer/Project
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+  /usr/include/c++/11/variant
 
 
 /home/seame-three/Team_Bugatti_PiRacer/Project\ 2\ -\ Digital\ Instrument\ Cluster/PRND/test/window.cpp:
 
-test_autogen/EWIEGA46WW/moc_mainwindow.cpp:
+test_autogen/EWIEGA46WW/moc_window.cpp:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar:
+test_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h:
 
@@ -1422,6 +1441,14 @@ test_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qprogressbar.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QProgressBar:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h:
 
@@ -1565,9 +1592,9 @@ test_autogen/include/ui_mainwindow.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
