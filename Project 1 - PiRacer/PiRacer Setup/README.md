@@ -59,7 +59,7 @@
 2. Go to `http://<raspberrypi_ip_address>:8887`
     
     <aside>
-    ?Ÿ???? If you connected with physical game controller, it overrides web control.
+    :warning: If you connected with physical game controller, it overrides web control.
     
     </aside>
     
@@ -94,7 +94,7 @@
 ## Teleoperation ( Shanwan gamepad )
 
 <aside>
-?Ÿ???? Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
+:warning: Nintendo Switch Pro Controller is compatible with  kernel version more than 5.16
 
 </aside>
 

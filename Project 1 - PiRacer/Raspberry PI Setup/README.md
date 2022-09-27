@@ -62,8 +62,6 @@ Advanced options
 
 ## Step 3: Connecting to the Pi
 
-Find car IP
-
 1. Find my car's IP
     ![Untitled (2)](https://user-images.githubusercontent.com/111988634/189864977-2a45180d-bc06-468b-bed4-a2a6049c607c.png)
     
